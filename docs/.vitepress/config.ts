@@ -49,7 +49,7 @@ function makeLocaleTheme(pathPrefix: string, localeKey: string) {
             {icon: "discord", link: "https://discord.gg/zMDTXCNxt"},
             {icon: "youtube", link: "https://www.youtube.com/@MipMap3D"},
             {icon: "reddit", link: "https://www.reddit.com/r/MipMap/"},
-            {icon: "linkedin", link: "https://www.linkedin.com/company/mipmap-software/"},
+            {icon: "linkedin", link: "https://www.linkedin.com/company/mipmap3d/"},
           ],
     search: {
       provider: "local" as const,
