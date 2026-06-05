@@ -1,0 +1,8 @@
+{
+  "label": "文档",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "MipMap Desktop 和 MipMap Engine 的完整文档"
+  }
+} 
