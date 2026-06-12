@@ -77,7 +77,7 @@ Output parameters select which reconstruction deliverables to generate. **At lea
 | `generate_2D_from_3D_model` | bool | false | Generate orthophoto from 3D model |
 
 :::tip Important
-On Windows, Gaussian splatting requires the Gaussian plugin: [Gaussian plugin](https://asset.mipmap3d.com/plugins/gs_dlls_v2.7.1.0.zip), and the machine learning plugin: [ML plugin](https://asset.mipmap3d.com/plugins/ml_dlls_v10.8.0.43.zip). Extract all DLL files into the same directory as `reconstruct_full_engine`.
+On Windows, Gaussian splatting requires the Gaussian plugin: [Gaussian plugin](https://resources.mipmap3d.com/plugins/gs_dlls_v2.7.1.0.zip), and the machine learning plugin: [ML plugin](https://resources.mipmap3d.com/plugins/ml_dlls_v10.8.0.43.zip). Extract all DLL files into the same directory as `reconstruct_full_engine`.
 :::
 
 ### Output Coordinate Systems Parameters [Optional]

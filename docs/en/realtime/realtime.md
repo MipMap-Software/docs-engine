@@ -150,7 +150,7 @@ Real-time reconstruction is provided by a gRPC server program: **realtime_servic
 The real-time reconstruction service uses the gRPC protocol. Developers should be familiar with gRPC client development for smooth integration and API calls.
 :::
 
-Proto file download: [Proto file download](https://asset.mipmap3d.com/engine/realtime.proto)
+Proto file download: [Proto file download](https://resources.mipmap3d.com/engine/realtime.proto)
 
 The diagram below shows the basic workflow of the real-time reconstruction service:
 
@@ -320,7 +320,7 @@ Response format (InitResponse)
 | `mesh_3d_save_type`          | int       | No       | Default `0`. Real-time 3D output format: `0` = ply, `1` = 3dtiles                                         |
 | `rt_mesh_reso_scale_to_gsd`          | int       | No       | Default `6`. Real-time 3D mesh resolution = `rt_mesh_reso_scale_to_gsd` × image GSD. Smaller values yield higher mesh resolution and sharper color but lower performance.                                        |
 | `save_dom_tiff`          | bool       | No       | Default `false`. Whether each frame writes a GeoTIFF DOM mosaic (adds per-frame time). Output path: `working_dir/2D/geotiffs/dom.tif`                                        |
-| `coordinate_descriptor_2D`          | object       | No       | Default `null`. Coordinate system for GeoTIFF DOM; see [coordinate system](../basic/basic-config#coordinate-system)  
+| `coordinate_descriptor_2D`          | object       | No       | Default `null`. Coordinate system for GeoTIFF DOM; see [coordinate system](../basic/reconstruct-full#coordinate-system)  
 
 #### AddFrame
 

@@ -38,7 +38,7 @@ Before you begin, ensure your system meets the following requirements:
 
 ### Next Steps
 
-Ready to get started? See our [Windows installation guide](./installation) or [Linux installation guide](./linux-deployment).
+Ready to get started? See our [Windows installation guide](./overview/installation) or [Linux installation guide](./overview/linux-deployment).
 
 
 ---

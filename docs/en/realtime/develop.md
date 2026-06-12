@@ -13,7 +13,7 @@ sidebar_position: 3
 
 2. **Generate client code**
 
-   Use the MipMap `.proto` file [Proto file download](https://asset.mipmap3d.com/engine/realtime.proto) and generate client code for your target language with `protoc`. See the gRPC official documentation or in-project instructions for commands and options.
+   Use the MipMap `.proto` file [Proto file download](https://resources.mipmap3d.com/engine/realtime.proto) and generate client code for your target language with `protoc`. See the gRPC official documentation or in-project instructions for commands and options.
 
 3. **Prepare the task configuration JSON file**
 

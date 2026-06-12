@@ -30,7 +30,7 @@ The data includes:
 
 | Field | Type | Required | Description |
 |--------|------|--------|------|
-| `coordinate_system` | JSON | Yes | Coordinate system object. See [coordinate_system](../basic/basic-config#coordinate-system). |
+| `coordinate_system` | JSON | Yes | Coordinate system object. See [coordinate_system](../basic/reconstruct-full#coordinate-system). |
 | `id` | int | Yes | Coordinate system ID |
 
 The following example includes one local coordinate system and one WGS 84 geographic coordinate system:

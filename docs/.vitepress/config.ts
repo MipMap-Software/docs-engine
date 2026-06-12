@@ -34,13 +34,14 @@ function makeLocaleTheme(pathPrefix: string, localeKey: string) {
     nav:
       localeKey === "zh-Hans"
         ? [
+            {text: "MipMap官网", link: "https://www.mipmap3d.com/"},
             {text: "B站", link: "https://space.bilibili.com/3546666453960858"},
             {
               text: "抖音",
               link: "https://www.douyin.com/user/MS4wLjABAAAACuPHt6LZw97U20dSiqKrVD-H4QlhgsQlNz-Q-4APdbUWop9TdqBpwwBRvMLQfn2-",
             },
           ]
-        : [],
+        : [{text: "MipMap", link: "https://na.mipmap3d.com/"}],
     socialLinks:
       localeKey === "zh-Hans"
         ? []
@@ -85,7 +86,11 @@ export default defineConfig({
   title: "MipMap Engine",
   description: "MipMap Engine",
   lang: "en-US",
-  base: isDev ? "/" : "/docs-engine",
+  base: isDev ? "/" : "/engine",
+  rewrites: {
+    "zh-Hans/overview.md": "zh-Hans/index.md",
+    "en/overview.md": "en/index.md",
+  },
   markdown: {
     config(md) {
       md.use(markdownItImageFigures, {

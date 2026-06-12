@@ -35,10 +35,10 @@ You can set advanced parameters in the SDK JSON configuration file for more flex
 | `tex_image_type_3dtiles` | int | 0 | 3D Tiles texture format: `0`=JPEG, `1`=WebP |
 | `roi_for_2d` | [roi](#roi) | - | Region of interest for 2D reconstruction. See [ROI structure](#roi) |
 | `roi_for_3d` | [roi](#roi) | - | Region of interest for 3D reconstruction. See [ROI structure](#roi) |
-| `roi_coordinate_system` | JSON | WGS84 | Coordinate system for ROI. See [coordinate system](../basic/basic-config#coordinate-system) |
+| `roi_coordinate_system` | JSON | WGS84 | Coordinate system for ROI. See [coordinate system](../basic/reconstruct-full#coordinate-system) |
 
 :::tip Important
-On Windows, enabling `fill_water_area_with_AI` requires the machine learning plugin: [ML plugin](https://asset.mipmap3d.com/plugins/ml_dlls_v10.8.0.43.zip). Extract all DLL files into the same directory as `reconstruct_full_engine`.
+On Windows, enabling `fill_water_area_with_AI` requires the machine learning plugin: [ML plugin](https://resources.mipmap3d.com/plugins/ml_dlls_v10.8.0.43.zip). Extract all DLL files into the same directory as `reconstruct_full_engine`.
 :::
 
 ### Parameter Structures

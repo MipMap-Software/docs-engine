@@ -18,7 +18,7 @@ Before you begin, make sure you have:
 
 We provide an intuitive interactive page to generate the JSON parameter file required to start reconstruction. Drag your images into the page, set your working directory, the SDK GDAL directory, and basic reconstruction parameters, then choose the output formats you need to produce the JSON file.
 
-**[Open the interactive page](https://mipmap3d.com/tasks_generator/#/)**
+**[Open the interactive page](https://www.mipmap3d.com/tasks_generator/#/)**
 
 Next, update the image root directory in the JSON file to your actual path, then launch full-pipeline reconstruction from the command line:
 

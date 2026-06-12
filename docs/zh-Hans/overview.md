@@ -38,7 +38,7 @@ MipMapEngine SDK 提供以下核心功能：
 
 ### 下一步
 
-准备好开始了吗？请访问我们的 [安装指南Windows](./installation)或 [安装指南Linux](./linux-deployment)。
+准备好开始了吗？请访问我们的 [安装指南Windows](./overview/installation)或 [安装指南Linux](./overview/linux-deployment)。
 
 
 ---
