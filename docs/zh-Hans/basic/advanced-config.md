@@ -28,7 +28,7 @@ sidebar_position: 3
 | `tex_image_type_3dtiles` | int | 0 | 3D Tiles 纹理格式：0=JPEG，1=WebP |
 | `roi_for_2d` | [roi](#roi) | - | 二维重建的感兴趣区域，格式查看[ROI结构释义](#roi)  |
 | `roi_for_3d` | [roi](#roi) | - | 三维重建的感兴趣区域，格式查看[ROI结构释义](#roi)  |
-| `roi_coordinate_system` | JSON | WGS84 | ROI 的坐标系，格式查看[坐标系](../basic/basic-config#coordinate-system)  |
+| `roi_coordinate_system` | JSON | WGS84 | ROI 的坐标系，格式查看[坐标系](../basic/reconstruct-full#coordinate-system)  |
 
 :::tip **重要提示**
 Windwos系统开启`fill_water_area_with_AI`机器学习水域填补需要下载机器学习插件，下载地址：[机器学习插件](https://asset.mipmap3d.com/plugins/ml_dlls_v10.8.0.43.zip)，下载后解压并将所有 dll 格式文件存放在 reconstruct_full_engine 同级目录

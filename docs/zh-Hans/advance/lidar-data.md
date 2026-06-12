@@ -28,7 +28,7 @@ sidebar_position: 2
 coordinate_systems是一个坐标系数组，存储每一组坐标系和其ID
 | 字段名 | 类型 | 是否必需 | 说明 |
 |--------|------|--------|------|
-| `coordinate_system` | JSON | 是 | 坐标系对象，详见[coordinate_system](../basic/basic-config#coordinate-system)  |
+| `coordinate_system` | JSON | 是 | 坐标系对象，详见[coordinate_system](../basic/reconstruct-full#coordinate-system)  |
 | `id` | int | 是 | 坐标系ID|
 
 

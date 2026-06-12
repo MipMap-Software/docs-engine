@@ -320,7 +320,7 @@ realtime_service是一个gRPC实时重建服务端程序，客户端可以通过
 | `mesh_3d_save_type`          | int       | 否       | 默认0, 实时三维成果格式，0：ply  1：3dtiles                                         |
 | `rt_mesh_reso_scale_to_gsd`          | int       | 否       | 默认6，实时三维生成的网格分辨率 = rt\_mesh\_reso\_scale\_to\_gsd\*图像gsd，  该值越小，网格分辨率越高，颜色越清晰，但效率也会相应降低                                        |
 | `save_dom_tiff`          | bool       | 否       | 默认false，实时帧是否生成tif格式的DOM大图，生成大图会增加每帧耗时，大图固定存放在`working_dir/2D/geotiffs/dom.tif`                                        |
-| `coordinate_descriptor_2D`          | object       | 否       | 默认null，tif格式DOM大图的坐标系，格式参考[坐标系](../basic/basic-config#coordinate-system)  
+| `coordinate_descriptor_2D`          | object       | 否       | 默认null，tif格式DOM大图的坐标系，格式参考[坐标系](../basic/reconstruct-full#coordinate-system)  
 
 #### AddFrame
 
