@@ -1,5 +1,5 @@
 ---
-title: Installation Guide (Linux)
+title: Installation Guide (Linux)(Not Ready)
 sidebar_position: 3
 ---
 
@@ -74,23 +74,12 @@ sudo dpkg -i senseshield-lcc-2.7.2.68616-amd64.deb
 
 #### Activate the License
 ```bash
-# Option 1: Activate with ssclt (replace JJKB-NBFS-KTM6-206T with your actual license key)
-ssclt --online_bind_license_key --license_key JJKB-NBFS-KTM6-206T
-```
-```bash
-# Option 2: Use license_engie for bind, unbind, and enumerate operations
+#Use license_engie for bind, unbind, and enumerate operations
 license_engine --bind xxxx-xxxx-xxxx-xxxx
 license_engine --unbind xxxx-xxxx-xxxx-xxxx
 license_engine --enum lics.json
 ```
 A return value of `0` from `license_engine` indicates success; otherwise the operation failed. See [error codes](../basic/error-codes) for failure codes.
-
-#### Unbind the License (when decommissioning a machine)
-```bash
-# Unbind license
-ssclt --online_unbind_license_key --license_key JJKB-NBFS-KTM6-206T
-```
----
 
 ### Run the Reconstruction Container
 
@@ -104,7 +93,6 @@ docker pull registry.mipmap3d.com/mipmap/runtime:v5.1.0.2-ubuntu22.04
 ```bash
 # Start Docker container
 docker run -it --rm \
-  -v /tmp:/tmp \             # Mount host /tmp into container [required for license access; must use this mount]
   -v /mnt:/mnt \             # Mount host directory into container [example; adjust as needed]
   --cpus 8 \                 # Limit container to 8 CPUs
   --gpus all \               # Use all GPUs (requires NVIDIA Container Toolkit)

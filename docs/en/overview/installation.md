@@ -40,16 +40,9 @@ This guide helps you install and configure MipMapEngine on Windows.
 nvidia-smi
 ```
 
-#### Step 2: Install the Virbox Driver 
+#### Step 2: Install the SDK
 
-1. Download the Virbox user tools: [https://lm.virbox.com/tools.html](https://lm.virbox.com/tools.html)
-2. Run the installer and complete the wizard
-
-*Note: Virbox is the SDK’s encryption and licensing tool. It must be installed before you can use the SDK.*
-
-#### Step 3: Install the SDK
-
-Download the latest SDK package from the [MipMap Engine SDK download page](https://www.mipmap3d.com/download/engine).
+Download the latest SDK package from the [MipMap Engine SDK download page](https://na.mipmap3d.com/download/engine).
 
 **Extract the SDK package.** The directory layout is as follows:
 
@@ -64,11 +57,9 @@ After installation, the SDK directory layout is:
 ├── gdal_data/                       # GDAL data directory
 ```
 
-#### Step 4: Activate the License
+#### Step 3: Activate the License
 
-Option 1: Activate online in the Virbox User Center by binding your license key
-
-Option 2: Use the `license_engine` executable for bind, unbind, and enumerate operations
+Use the `license_engine` executable for bind, unbind, and enumerate operations
 
 ```bash
 license_engine --bind xxxx-xxxx-xxxx-xxxx
