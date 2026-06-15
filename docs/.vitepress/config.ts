@@ -87,10 +87,6 @@ export default defineConfig({
   description: "MipMap Engine",
   lang: "en-US",
   base: isDev ? "/" : "/engine",
-  rewrites: {
-    "zh-Hans/overview.md": "zh-Hans/index.md",
-    "en/overview.md": "en/index.md",
-  },
   markdown: {
     config(md) {
       md.use(markdownItImageFigures, {

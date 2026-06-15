@@ -153,13 +153,13 @@ function collectNodes(
     }
 
     const relativePath = path.relative(contentRoot, fullPath);
-    if (
-      relativePath === "index.md" ||
-      relativePath.endsWith("/index.md") ||
-      relativePath.endsWith("\\index.md")
-    ) {
-      continue;
-    }
+    // if (
+    //   relativePath === "index.md" ||
+    //   relativePath.endsWith("/index.md") ||
+    //   relativePath.endsWith("\\index.md")
+    // ) {
+    //   continue;
+    // }
 
     const frontmatter = parseFrontmatter(fullPath);
     nodes.push({
