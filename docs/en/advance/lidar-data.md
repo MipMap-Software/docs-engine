@@ -48,7 +48,6 @@ The following example includes one local coordinate system and one WGS 84 geogra
     "id": 1,
     "coordinate_system": {
       "type": 2,
-      "type_name": "Geographic",
       "label": "WGS 84",
       "epsg_code": 4326
     }
@@ -67,7 +66,7 @@ The following example includes one local coordinate system and one WGS 84 geogra
 
 | Field | Type | Required | Description |
 |----------------|--------------|----------|--------------------------------------------------------------|
-| `projection_model` | int | Yes | Lens model: `0` — perspective (k1, k2, k3, p1, p2); `1` — fisheye (k1, k2, k3, k4) |
+| `projection_model` | int | Yes | Lens model: `0` — perspective (k1, k2, p1, p2, k3); `1` — fisheye (k1, k2, k3, k4) |
 | `camera_name` | string | Yes | Camera name |
 | `width` | int | Yes | Sensor width (pixels) |
 | `height` | int | Yes | Sensor height (pixels) |

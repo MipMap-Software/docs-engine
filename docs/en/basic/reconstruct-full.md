@@ -69,16 +69,13 @@ Output parameters select which reconstruction deliverables to generate. **At lea
 | `generate_pc_ply` | bool | false | Generate point cloud PLY |
 | `generate_pc_osgb` | bool | false | Generate point cloud OSGB (LOD) |
 | `generate_pc_pnts` | bool | false | Generate point cloud PNTS (3D Tiles) |
-| `generate_gs_ply` | bool | false | Generate PLY Gaussian splatting output [requires Gaussian and ML plugins] |
-| `generate_gs_sog` | bool | false | Generate compressed SOG Gaussian splatting output [requires Gaussian and ML plugins] |
-| `generate_gs_splat_sog_tiles` | bool | false | Generate SOG Tiles for large-scale Gaussian splatting rendering [requires Gaussian and ML plugins] |
+| `generate_gs_ply` | bool | false | Generate PLY Gaussian splatting output|
+| `generate_gs_sog` | bool | false | Generate compressed SOG Gaussian splatting output|
+| `generate_gs_splat_sog_tiles` | bool | false | Generate SOG Tiles for large-scale Gaussian splatting rendering|
 | `generate_geotiff` | bool | false | Generate orthophoto |
 | `generate_tile_2D` | bool | false | Generate 2D tiles |
 | `generate_2D_from_3D_model` | bool | false | Generate orthophoto from 3D model |
 
-:::tip Important
-On Windows, Gaussian splatting requires the Gaussian plugin: [Gaussian plugin](https://resources.mipmap3d.com/plugins/gs_dlls_v2.7.1.0.zip), and the machine learning plugin: [ML plugin](https://resources.mipmap3d.com/plugins/ml_dlls_v10.8.0.43.zip). Extract all DLL files into the same directory as `reconstruct_full_engine`.
-:::
 
 ### Output Coordinate Systems Parameters [Optional]
 
@@ -98,8 +95,6 @@ The above parameters meet the needs of most users. For more advanced options, re
 | Field | Type | Description | Example |
 |--------|------------|--------------------------------------------------------------|----------------|
 | `type` | int | `0`=LocalENU, `1`=Local, `2`=Geographic, `3`=Projected, `4`=ECEF | 2 |
-| `type_name` | string | Coordinate system type name (optional) | "Geographic" |
-| `label` | string | Coordinate system label (optional) | "WGS 84" |
 | `epsg_code` | int | EPSG code (required for geographic/projected/ECEF) | 4326 |
 | `wkt` | string | WKT string (optional, alternative to `epsg_code`) | "..." |
 | `origin_point` | array[3] | WGS84 origin [lon, lat, elevation] (required only for `type=0` LocalENU) | [114.12, 22.12, 0] |
@@ -160,14 +155,10 @@ Example:
 ```json
 {
   "type": 2,
-  "type_name": "Geographic",
-  "label": "WGS 84",
   "epsg_code": 4326
 }
 {
   "type": 3,
-  "type_name": "Projected",
-  "label": "WGS 84 / UTM zone 50N",
   "epsg_code": 32650,
   "offset": [
       269431.5374728,
@@ -177,14 +168,10 @@ Example:
 }
 {
   "type": 2,
-  "type_name": "Geographic",
-  "label": "CGCS2000",
   "epsg_code": 4490
 }
 {
   "type": 2,
-  "type_name": "Projected",
-  "label": "CGCS2000 / 3-degree Gauss-Kruger CM 114E",
   "epsg_code": 4547,
   "offset": [
       269431.5374728,
@@ -204,7 +191,6 @@ Example:
   "resolution_level": 2,
   "coordinate_system": {
     "type": 2,
-    "label": "WGS 84",
     "epsg_code": 4326
   },
   "image_meta_data": [
@@ -230,7 +216,6 @@ Example:
   "resolution_level": 1,
   "coordinate_system": {
     "type": 2,
-    "label": "WGS 84",
     "epsg_code": 4326
   },
   "image_meta_data": [
