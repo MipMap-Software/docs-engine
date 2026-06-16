@@ -12,6 +12,7 @@ type CategoryMeta = {
 type FrontmatterMeta = {
   title?: string;
   sidebar_position?: number;
+  ignore?: boolean;
 };
 
 type SidebarNode = {
@@ -76,10 +77,15 @@ function parseFrontmatter(filePath: string): FrontmatterMeta {
     }
 
     if (key === "sidebar_position") {
-      const parsed = Number(value);
+      const parsed = Number(value.replace(/,$/, ""));
       if (!Number.isNaN(parsed)) {
         meta.sidebar_position = parsed;
       }
+      continue;
+    }
+
+    if (key === "ignore") {
+      meta.ignore = value.replace(/,$/, "").trim() === "true";
     }
   }
 
@@ -166,6 +172,9 @@ function collectNodes(
     // }
 
     const frontmatter = parseFrontmatter(fullPath);
+    if (frontmatter.ignore) {
+      continue;
+    }
     nodes.push({
       text: frontmatter.title ?? normalizeText(entry.name),
       position: frontmatter.sidebar_position,
