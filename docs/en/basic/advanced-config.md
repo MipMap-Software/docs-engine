@@ -7,13 +7,6 @@ sidebar_position: 3
 
 You can set advanced parameters in the SDK JSON configuration file for more flexible control.
 
-### Aerial Triangulation Module
-
-| Parameter | Type | Default | Description |
-|--------|------|--------|------|
-| `num_features` | int | 20000 | Number of feature points extracted per image |
-| `grid_count` | int | 200 | Pixel grid count for feature sampling; larger values produce more AT sparse points |
-
 ### Reconstruction Module
 
 | Parameter | Type | Default | Description |
