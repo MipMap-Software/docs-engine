@@ -40,7 +40,3 @@ Before you begin, ensure your system meets the following requirements:
 
 Ready to get started? See our [Windows installation guide](./overview/installation) or [Linux installation guide](./overview/linux-deployment).
 
-
----
-
-*Current version: v4.0 | Last updated: March 2024*

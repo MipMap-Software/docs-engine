@@ -6,6 +6,7 @@ type CategoryMeta = {
   label?: string;
   position?: number;
   collapsed?: boolean;
+  ignore?: boolean;
 };
 
 type FrontmatterMeta = {
@@ -134,6 +135,9 @@ function collectNodes(
       }
 
       const meta = parseCategoryMeta(fullPath);
+      if (meta.ignore) {
+        continue;
+      }
       const items = collectNodes(contentRoot, fullPath, routePrefix, options);
       if (items.length === 0) {
         continue;

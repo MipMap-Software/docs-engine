@@ -1,5 +1,6 @@
 {
   "label": "Real-time",
   "position": 5,
-  "collapsed": false
+  "collapsed": false,
+  "ignore": true
 }
