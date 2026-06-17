@@ -23,7 +23,7 @@ We provide an intuitive interactive page to generate the JSON parameter file req
 Next, update the image root directory in the JSON file to your actual path, then launch full-pipeline reconstruction from the command line:
 
 ```bash
-reconstruct_full_engine(.exe) --reconstruct_type 0 --task_json config_task.json
+reconstruct_full_engine(.exe) --reconstruct_type 0 --task_json config_task.json --license_key xxxx-xxxx-xxxx-xxxxxx
 ```
 
 :::tip Tip
@@ -34,6 +34,7 @@ Parameter description
 
 - `reconstruct_type`: `0` means one-click full-pipeline reconstruction
 - `task_json`: Path to the JSON parameter file
+- `license_key`: License key
 
 [**Important**] You are starting the SDK’s one-click full-pipeline reconstruction interface—the most common and recommended entry point. See [Reconstruct Full](../basic/reconstruct-full) for detailed parameter rules.
 

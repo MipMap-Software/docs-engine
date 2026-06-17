@@ -23,11 +23,12 @@ ReconstructFull is the simplest full-pipeline reconstruction API, ideal for quic
 The MipMapEngine SDK is invoked from the command line and is not tied to any programming language. Set `reconstruct_type` to `0` for full-pipeline reconstruction:
 
 ```bash
-reconstruct_full_engine(.exe) --reconstruct_type 0 --task_json /path/to/task.json
+reconstruct_full_engine(.exe) --reconstruct_type 0 --task_json /path/to/task.json --license_key xxxx-xxxx-xxxx-xxxxxx
 ```
 
 - `reconstruct_type`: API type, fixed to `0` (full-pipeline reconstruction)
 - `task_json`: Path to the JSON parameter file
+- `license_key`: License key
 
 ### Error Handling
 

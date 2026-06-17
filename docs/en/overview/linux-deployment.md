@@ -60,28 +60,6 @@ docker run --gpus all nvidia/cuda:12.8.0-base-ubuntu22.04 nvidia-smi
 
 ---
 
-### License Management
-
-:::tip **Note**
-License operations run on the **host** machine, not inside the container.
-:::
-
-#### Install the License Tool
-```bash
-# Install SenseShield license client
-# Download Virbox user tools (Linux) (.deb 64-bit) from https://lm.virbox.com/tools.html
-sudo dpkg -i senseshield-lcc-2.7.2.68616-amd64.deb
-```
-
-#### Activate the License
-```bash
-#Use license_engie for bind, unbind, and enumerate operations
-license_engine --bind xxxx-xxxx-xxxx-xxxx
-license_engine --unbind xxxx-xxxx-xxxx-xxxx
-license_engine --enum lics.json
-```
-A return value of `0` from `license_engine` indicates success; otherwise the operation failed. See [error codes](../basic/error-codes) for failure codes.
-
 ### Run the Reconstruction Container
 
 #### Pull the Image
@@ -94,17 +72,18 @@ docker pull registry.mipmap3d.com/mipmap/runtime:v5.1.0.2-ubuntu22.04
 ```bash
 # Start Docker container
 docker run -it --rm \
-  -v /mnt:/mnt \             # Mount host directory into container [example; adjust as needed]
-  --cpus 8 \                 # Limit container to 8 CPUs
-  --gpus all \               # Use all GPUs (requires NVIDIA Container Toolkit)
-  --name mipmap \            # Container name: mipmap
+  -v $HOME/.config:/root/.config \ # Required for license verification
+  -v /mnt:/mnt \                   # Mount host directory into container [example; adjust as needed]
+  --cpus 8 \                      # Limit container to 8 CPUs
+  --gpus all \                    # Use all GPUs (requires NVIDIA Container Toolkit)
+  --name mipmap \                 # Container name: mipmap
   registry.mipmap3d.com/mipmap/runtime:v5.1.0.2-ubuntu22.04 \
-  /bin/bash                  # Start bash after entering the container
+  /bin/bash                       # Start bash after entering the container
 ```
 
 **Important notes**:
 - `/mnt` volume mapping: `mnt` is an example; mount whichever host paths your workflow needs
-- `/tmp` volume mapping: required for license access; must be mounted
+- `$HOME/.config` volume mapping: required for license access; must be mounted
 - `--cpus 8`: limits the container to 8 CPU cores
 - `--gpus all`: enables all GPUs
 
@@ -112,13 +91,13 @@ docker run -it --rm \
 
 ```bash
 # Run the reconstruction engine inside the container
-./mipmap_engine/reconstruct_full_engine --reconstruct_type 0 --task_json /mnt/task.json
+./mipmap_engine/reconstruct_full_engine --reconstruct_type 0 --task_json /mnt/task.json --license_key xxxx-xxxx-xxxx-xxxxxx
 ```
 
 **Parameter description**:
 - `--reconstruct_type`: Reconstruction type (`0` = default full pipeline)
 - `--task_json`: Path to the task configuration JSON file
-
+- `license_key`: License key
 
 ### Troubleshooting
 

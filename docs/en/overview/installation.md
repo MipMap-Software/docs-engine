@@ -53,26 +53,13 @@ After installation, the SDK directory layout is:
 ```
 ├── bin/                             
 │   ├── reconstruct_full_engine.exe  # Reconstruction executable; all reconstruction steps use this program
-│   ├── license_engine.exe           # License management: activate, bind, enumerate licenses
 ├── gdal_data/                       # GDAL data directory
 ```
-
-#### Step 3: Activate the License
-
-Use the `license_engine` executable for bind, unbind, and enumerate operations
-
-```bash
-license_engine --bind xxxx-xxxx-xxxx-xxxx
-license_engine --unbind xxxx-xxxx-xxxx-xxxx
-license_engine --enum lics.json
-```
-A return value of `0` from `license_engine` indicates success; otherwise the operation failed. See [error codes](../basic/error-codes) for failure codes.
 
 ### Installation Checklist
 
 - NVIDIA GPU driver updated to the required version
 - SDK files extracted correctly
-- License activated successfully
 
 ### Next Steps
 
