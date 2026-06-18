@@ -11,14 +11,14 @@ This guide helps you get started with MipMapEngine SDK quickly.
 
 Before you begin, make sure you have:
 
-1. ✅ Installed the SDK (see [Windows installation guide](./installation) or [Linux installation guide](./linux-deployment))
+1. ✅ Installed the SDK (see [Windows installation guide](./installation) )
 2. ✅ Activated your license
 
 ### Start a Reconstruction Quickly
 
 We provide an intuitive interactive page to generate the JSON parameter file required to start reconstruction. Drag your images into the page, set your working directory, the SDK GDAL directory, and basic reconstruction parameters, then choose the output formats you need to produce the JSON file.
 
-**[Open the interactive page](https://www.mipmap3d.com/tasks_generator/#/)**
+**[Open the interactive page](https://na.mipmap3d.com/tasks_generator/#/)**
 
 Next, update the image root directory in the JSON file to your actual path, then launch full-pipeline reconstruction from the command line:
 
