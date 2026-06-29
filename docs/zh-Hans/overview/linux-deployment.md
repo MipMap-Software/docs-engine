@@ -97,7 +97,7 @@ ssclt --online_unbind_license_key --license_key JJKB-NBFS-KTM6-206T
 #### 下载镜像
 
 ```bash
-docker pull registry.mipmap3d.com/mipmap/runtime:v5.1.0.7-ubuntu22.04
+docker pull registry.mipmap3d.com/mipmap/runtime:v5.1.0.8-ubuntu22.04
 ```
 
 #### 从镜像启动容器
@@ -109,7 +109,7 @@ docker run -it --rm \
   --cpus 8 \                 # 限制容器使用 8 个 CPU
   --gpus all \               # 使用所有 GPU（需要 NVIDIA Container Toolkit）
   --name mipmap \            # 容器名称为 mipmap
-  registry.mipmap3d.com/mipmap/runtime:v5.1.0.7-ubuntu22.04 \
+  registry.mipmap3d.com/mipmap/runtime:v5.1.0.8-ubuntu22.04 \
   /bin/bash                  # 进入容器后启动 bash
 ```
 
@@ -151,6 +151,6 @@ docker run --gpus all nvidia/cuda:12.8.0-base-ubuntu22.04 nvidia-smi
 
 ```
 mipmap_engine/
-├── data/                       # gdal_folder目录
+├── gdal_data/                       # gdal_folder目录
 ├── reconstruct_full_engine     # 主处理程序
 ```

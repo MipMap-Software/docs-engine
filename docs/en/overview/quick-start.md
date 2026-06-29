@@ -23,7 +23,10 @@ We provide an intuitive interactive page to generate the JSON parameter file req
 Next, update the image root directory in the JSON file to your actual path, then launch full-pipeline reconstruction from the command line:
 
 ```bash
-reconstruct_full_engine(.exe) --reconstruct_type 0 --task_json config_task.json --license_key xxxx-xxxx-xxxx-xxxxxx
+[Win]
+reconstruct_full_engine.exe --reconstruct_type 0 --task_json config_task.json --license_key xxxx-xxxx-xxxx-xxxxxx
+[Linux]
+./mipmap_engine/reconstruct_full_engine --reconstruct_type 0 --task_json config_task.json --license_key xxxx-xxxx-xxxx-xxxxxx
 ```
 
 :::tip Tip

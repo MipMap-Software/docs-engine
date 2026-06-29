@@ -65,7 +65,7 @@ docker run --gpus all nvidia/cuda:12.8.0-base-ubuntu22.04 nvidia-smi
 #### Pull the Image
 
 ```bash
-docker pull registry.mipmap3d.com/mipmap/runtime:v5.1.0.2-ubuntu22.04
+docker pull registry.mipmap3d.com/mipmap/runtime:v5.1.0.8-ubuntu22.04
 ```
 
 #### Start a Container from the Image
@@ -77,7 +77,7 @@ docker run -it --rm \
   --cpus 8 \                      # Limit container to 8 CPUs
   --gpus all \                    # Use all GPUs (requires NVIDIA Container Toolkit)
   --name mipmap \                 # Container name: mipmap
-  registry.mipmap3d.com/mipmap/runtime:v5.1.0.2-ubuntu22.04 \
+  registry.mipmap3d.com/mipmap/runtime:v5.1.0.8-ubuntu22.04 \
   /bin/bash                       # Start bash after entering the container
 ```
 
@@ -119,6 +119,6 @@ docker run --gpus all nvidia/cuda:12.8.0-base-ubuntu22.04 nvidia-smi
 
 ```
 mipmap_engine/
-├── data/                       # gdal_folder directory
+├── gdal_data/                       # gdal_folder directory
 ├── reconstruct_full_engine     # Main processing executable
 ```

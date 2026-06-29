@@ -46,17 +46,17 @@ See [Error Codes](./error-codes) for details.
 | Parameter | Type | Description | Example |
 |--------|------|------|--------|
 | `working_dir` | string | Working directory path | `"C:/Projects/MyProject"` |
-| `gdal_folder` | string | GDAL data directory | `"C:/MipMap/SDK/data"` |
+| `gdal_folder` | string | GDAL data directory(**Only needed in Windows system**) | `"C:/MipMap/SDK/data"` |
 | `image_meta_data` | array[[image_meta_data](#image-meta-data)] | Image list. See [image_meta_data](#image-meta-data) | |
 | `input_image_type` | int | Image type | `1`=RGB, `2`=multispectral, `3`=infrared |
 | `resolution_level` | int | `1`=high, `2`=medium, `3`=low | 1 |
 | `coordinate_system` | [coordinate_system](#coordinate-system) | Coordinate system of POS (GPS) embedded in image EXIF. UAV images often embed WGS84; images without embedded POS (phones, panoramic cameras) use Local. See [coordinate_system](#coordinate-system) | [Common coordinate systems](#common-coordinate-systems) |
 
 :::tip
-`gdal_folder` is the `data` or `gdal_data` directory bundled with the SDK. The directory can be moved; point to the correct path. **Path must use ASCII characters only.**
+`gdal_folder` points to the SDK's bundled `data` or `gdal_data` directory. You can move this directory as needed, as long as `gdal_folder` points to its new location. On Linux, this parameter is not required. **The path must contain ASCII characters only.**
 :::
 
-### Output Types Parameters [Optional]
+### Output Types Parameters
 
 Output parameters select which reconstruction deliverables to generate. **At least one** output type must be enabled.
 

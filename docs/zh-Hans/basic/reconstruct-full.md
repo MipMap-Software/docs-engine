@@ -44,17 +44,17 @@ reconstruct_full_engine(.exe) --reconstruct_type 0 --task_json /path/to/task.jso
 | 参数名 | 类型 | 说明 | 示例值 |
 |--------|------|------|--------|
 | `working_dir` | string | 工作目录路径 | `"C:/Projects/MyProject"` |
-| `gdal_folder` | string | GDAL 数据目录 | `"C:/MipMap/SDK/data"` |
+| `gdal_folder` | string | GDAL数据目录，只有Windows系统需要设置，**需要设置为全英文路径** | `"C:/MipMap/SDK/data"` |
 | `image_meta_data` | array[[image_meta_data](#image-meta-data)] | 图像列表 | 格式说明查看[image_meta_data](#image-meta-data) |
 | `input_image_type` | int | 图像类型 | `1`=RGB, `2`=多光谱, `3`=红外 |
 | `resolution_level` | int | `1`=高, `2`=中, `3`=低 | 1 |
 | `coordinate_system` | [coordinate_system](#coordinate-system) | 输入图像EXIF内嵌的POS(GPS)所属坐标系，无人机图像常内嵌WGS84坐标系，若无内嵌POS如手机、全景相机图像则为Local坐标系，详见[coordinate_system](#coordinate-system) | [常见坐标系示例](#常见的坐标系)|
 
 :::tip 提示
-`gdal_folder`是SDK包里自带的`data`或`gdal_data`目录，目录下有众多数据库文件，目录可以移动位置，指定到对应的路径即可，**必须为英文路径**。
+`gdal_folder`是SDK包里自带的`data`或`gdal_data`目录，目录下有众多数据库文件，目录可以移动位置，指定到对应的路径即可，Linux不需要设置该字段；**必须为全英文路径**。
 :::
  
-### 成果类型参数【可选】
+### 成果类型参数
 
 成果参数用来确定最终输出哪种类型的重建成果，成果参数必须**至少选择一种**，否则无法完成重建。
 
