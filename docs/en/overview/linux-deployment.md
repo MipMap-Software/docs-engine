@@ -1,7 +1,6 @@
 ---
-title: Installation Guide (Linux)(Not Ready)
-sidebar_position: 3,
-ignore: true
+title: Installation Guide (Linux)
+sidebar_position: 3
 ---
 
 ## Installation Guide (Linux)

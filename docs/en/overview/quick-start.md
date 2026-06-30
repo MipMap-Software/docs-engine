@@ -11,7 +11,7 @@ This guide helps you get started with MipMapEngine SDK quickly.
 
 Before you begin, make sure you have:
 
-1. ✅ Installed the SDK (see [Windows installation guide](./installation) )
+1. ✅ Installed the SDK (see [Windows installation guide](./installation) or [Linux installation guide](./linux-deployment.md))
 2. ✅ Activated your license
 
 ### Start a Reconstruction Quickly
