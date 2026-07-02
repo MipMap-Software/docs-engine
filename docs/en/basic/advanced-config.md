@@ -17,10 +17,8 @@ You can set advanced parameters in the SDK JSON configuration file for more flex
 | `cut_frame_2d` | bool | false | Whether to output 2D deliverables in tiles |
 | `cut_frame_width` | int | 5000 | Pixel width per 2D tile when `cut_frame_2d` is `true` |
 | `dom_gsd` | double | 0 | Ground resolution of true orthophoto; `0` means auto-compute. SDK applies a minimum guard; values below the limit are ignored |
-| `dom_gsd_min_scale_to_original` | double | 0.25 | Minimum guard: `dom_gsd` will not exceed original image GSD × this factor |
 | `tile_extention` | string | ".webp" | Image format for true orthophoto tiles: `.png` or `.webp` |
 | `use_gcj02` | bool | false | Convert orthophoto tiles to GCJ-02 coordinate system |
-| `fast_mode` | bool | false | Faster processing at the cost of some mesh detail |
 | `keep_undistort_images` | bool | false | Keep undistorted images after reconstruction (default: do not keep) |
 | `remove_small_islands` | bool | false | Remove isolated floating components from the 3D model |
 | `mesh_decimate_ratio` | double | 1.0 | Mesh simplification ratio; smaller values mean more simplification |

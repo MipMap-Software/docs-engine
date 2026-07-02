@@ -17,10 +17,8 @@ sidebar_position: 3
 | `cut_frame_2d` | bool | false | 二维成果是否分幅输出 |
 | `cut_frame_width` | int | 5000 | 二维成果分幅输出的单幅像素尺寸， `cut_frame_2d` 为`true`时有效 |
 | `dom_gsd` | double | 0 | 二维真正射影像的地面分辨率，默认为0，表示自动计算，为了防止图像过大，SDK做了小值保护，设置过小的值不生效 |
-| `dom_gsd_min_scale_to_original` | double | 0.25 | 小值保护，设置的正射影像地面分辨率`dom_gsd`不超过：原始图像GSD*`dom_gsd_min_scale_to_original` |
 | `tile_extention` | string | ".webp" | 真正射二维瓦片成果的图像格式，支持格式： ".png"、".webp" |
 | `use_gcj02` | bool | false | 是否将正射影像瓦片转换为 GCJ02 坐标系 |
-| `fast_mode` | bool | false | 是否开启快速模式，快速模式下速度更快，但会牺牲一定的网格细节质量 |
 | `keep_undistort_images` | bool | false | 是否在重建完成后保留去畸变图像，默认不保留 |
 | `remove_small_islands` | bool | false | 是否删除三维模型的孤立悬浮物 |
 | `mesh_decimate_ratio` | double | 1.0 | 三维模型网格的简化率，值越小简化力度越大 |
