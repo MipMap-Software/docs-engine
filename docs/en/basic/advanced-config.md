@@ -12,7 +12,7 @@ You can set advanced parameters in the SDK JSON configuration file for more flex
 | Parameter | Type | Default | Description |
 |--------|------|--------|------|
 | `min_avali_memory_size` | double | 0 | Minimum available memory for the device; controls tile size and count for tiled reconstruction. `0` uses maximum available memory |
-| `fill_water_area_with_AI` | bool | false | Use machine learning for water-area inpainting `[requires ML plugin]` |
+| `fill_water_area_with_AI` | bool | false | Use machine learning for water-area inpainting |
 | `build_overview` | bool | true | Whether to build image pyramids for 2D deliverables |
 | `cut_frame_2d` | bool | false | Whether to output 2D deliverables in tiles |
 | `cut_frame_width` | int | 5000 | Pixel width per 2D tile when `cut_frame_2d` is `true` |
@@ -22,8 +22,10 @@ You can set advanced parameters in the SDK JSON configuration file for more flex
 | `keep_undistort_images` | bool | false | Keep undistorted images after reconstruction (default: do not keep) |
 | `remove_small_islands` | bool | false | Remove isolated floating components from the 3D model |
 | `mesh_decimate_ratio` | double | 1.0 | Mesh simplification ratio; smaller values mean more simplification |
-| `use_draco_compression` | bool | true | Enable Draco vertex compression for 3D Tiles |
 | `tex_image_type_3dtiles` | int | 0 | 3D Tiles texture format: `0`=JPEG, `1`=WebP |
+| `gs_splat_max_pnt_count` | int | 0 | Maximum Gaussian point count; `0` means no limit |
+| `merge_mesh_products` | bool | false | Merge tiled mesh outputs into a single result |
+| `merge_pc_products` | bool | false | Merge tiled point cloud outputs into a single result |
 | `roi_for_2d` | [roi](#roi) | - | Region of interest for 2D reconstruction. See [ROI structure](#roi) |
 | `roi_for_3d` | [roi](#roi) | - | Region of interest for 3D reconstruction. See [ROI structure](#roi) |
 | `roi_coordinate_system` | JSON | WGS84 | Coordinate system for ROI. See [coordinate system](../basic/reconstruct-full#coordinate-system) |

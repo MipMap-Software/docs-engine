@@ -12,7 +12,7 @@ sidebar_position: 3
 | 参数名 | 类型 | 默认值 | 说明 |
 |--------|------|--------|------|
 | `min_avali_memory_size` | double | 0 | 设备最小可支持内存，可以控制分块重建的大小和数量，为0则最大化使用设备可用内存 |
-| `fill_water_area_with_AI` | bool | false | 是否使用机器学习进行水域识别填补`[需机器学习插件]` |
+| `fill_water_area_with_AI` | bool | false | 是否使用机器学习进行水域识别填补`[Windows系统机器学习插件]` |
 | `build_overview` | bool | true | 二维成果是否构建图像金字塔 |
 | `cut_frame_2d` | bool | false | 二维成果是否分幅输出 |
 | `cut_frame_width` | int | 5000 | 二维成果分幅输出的单幅像素尺寸， `cut_frame_2d` 为`true`时有效 |
@@ -22,8 +22,10 @@ sidebar_position: 3
 | `keep_undistort_images` | bool | false | 是否在重建完成后保留去畸变图像，默认不保留 |
 | `remove_small_islands` | bool | false | 是否删除三维模型的孤立悬浮物 |
 | `mesh_decimate_ratio` | double | 1.0 | 三维模型网格的简化率，值越小简化力度越大 |
-| `use_draco_compression` | bool | true | 3D Tiles 成果是否启用 Draco 顶点压缩 |
 | `tex_image_type_3dtiles` | int | 0 | 3D Tiles 纹理格式：0=JPEG，1=WebP |
+| `gs_splat_max_pnt_count` | int | 0 | 最大高斯点数，默认0代表不限制 |
+| `merge_mesh_products` | bool | false | 是否将分块重建的网格成果合并为一个整体 |
+| `merge_pc_products` | bool | false | 是否将分块重建的点云成果合并为一个整体 |
 | `roi_for_2d` | [roi](#roi) | - | 二维重建的感兴趣区域，格式查看[ROI结构释义](#roi)  |
 | `roi_for_3d` | [roi](#roi) | - | 三维重建的感兴趣区域，格式查看[ROI结构释义](#roi)  |
 | `roi_coordinate_system` | JSON | WGS84 | ROI 的坐标系，格式查看[坐标系](../basic/reconstruct-full#coordinate-system)  |

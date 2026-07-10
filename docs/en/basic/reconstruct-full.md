@@ -47,7 +47,8 @@ See [Error Codes](./error-codes) for details.
 |--------|------|------|--------|
 | `working_dir` | string | Working directory path | `"C:/Projects/MyProject"` |
 | `gdal_folder` | string | GDAL data directory(**Only needed in Windows system**) | `"C:/MipMap/SDK/data"` |
-| `image_meta_data` | array[[image_meta_data](#image-meta-data)] | Image list. See [image_meta_data](#image-meta-data) | |
+| `image_meta_data` | array[[image_meta_data](#image-meta-data)] | Image list (at least one of `image_meta_data` and `video_meta_data`  must be provided) | See [image_meta_data](#image-meta-data) | |
+| `video_meta_data` | array[[video_meta_data](#video_meta_data)] | Video list (at least one of `image_meta_data` and `video_meta_data` must be provided) | See [video_meta_data](#video_meta_data) |
 | `input_image_type` | int | Image type | `1`=RGB, `2`=multispectral, `3`=infrared |
 | `resolution_level` | int | `1`=high, `2`=medium, `3`=low | 1 |
 | `coordinate_system` | [coordinate_system](#coordinate-system) | Coordinate system of POS (GPS) embedded in image EXIF. UAV images often embed WGS84; images without embedded POS (phones, panoramic cameras) use Local. See [coordinate_system](#coordinate-system) | [Common coordinate systems](#common-coordinate-systems) |
@@ -110,7 +111,17 @@ The above parameters meet the needs of most users. For more advanced options, re
 | `group` | string | No | Camera group name (multi-camera systems) |
 | `mask_path` | string | No | Path to binary mask PNG; pixels with value 0 are ignored during reconstruction |
 
-- **`group` parameter**
+#### video_meta_data
+
+| Field | Type | Required | Description |
+|----------------------|--------------|----------|--------------------------------------------------------------|
+| `id` | int | Yes | Unique video ID |
+| `path` | string | Yes | Absolute video path |
+| `interval` | double | No | Frame extraction interval in seconds, default is 1.0 |
+| `start` | double | No | Start time for frame extraction in seconds, default is 0 |
+| `end` | double | No | End time for frame extraction in seconds, default is the video end time |
+
+#### **`group` parameter**
 
 Groups images from different cameras in multi-camera systems:
 

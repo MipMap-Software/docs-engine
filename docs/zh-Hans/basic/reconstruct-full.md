@@ -45,7 +45,8 @@ reconstruct_full_engine(.exe) --reconstruct_type 0 --task_json /path/to/task.jso
 |--------|------|------|--------|
 | `working_dir` | string | 工作目录路径 | `"C:/Projects/MyProject"` |
 | `gdal_folder` | string | GDAL数据目录，只有Windows系统需要设置，**需要设置为全英文路径** | `"C:/MipMap/SDK/data"` |
-| `image_meta_data` | array[[image_meta_data](#image-meta-data)] | 图像列表 | 格式说明查看[image_meta_data](#image-meta-data) |
+| `image_meta_data` | array[[image_meta_data](#image-meta-data)] | 图像列表（和video_meta_data至少有一个存在） | 格式说明查看[image_meta_data](#image-meta-data) |
+| `video_meta_data` | array[[video_meta_data](#video_meta_data)] | 视频列表（和image_meta_data至少有一个存在） | 格式说明查看[video_meta_data](#video_meta_data) |
 | `input_image_type` | int | 图像类型 | `1`=RGB, `2`=多光谱, `3`=红外 |
 | `resolution_level` | int | `1`=高, `2`=中, `3`=低 | 1 |
 | `coordinate_system` | [coordinate_system](#coordinate-system) | 输入图像EXIF内嵌的POS(GPS)所属坐标系，无人机图像常内嵌WGS84坐标系，若无内嵌POS如手机、全景相机图像则为Local坐标系，详见[coordinate_system](#coordinate-system) | [常见坐标系示例](#常见的坐标系)|
@@ -68,9 +69,9 @@ reconstruct_full_engine(.exe) --reconstruct_type 0 --task_json /path/to/task.jso
 | `generate_pc_ply` | bool | false | 生成点云 PLY |
 | `generate_pc_osgb` | bool | false | 生成点云 OSGB (LOD) |
 | `generate_pc_pnts` | bool | false | 生成点云 PNTS (3D Tiles) |
-| `generate_gs_ply` | bool | false | 生成 PLY 格式高斯泼溅成果[需高斯插件和机器学习插件] |
-| `generate_gs_sog` | bool | false | 生成 SOG 格式，体积压缩后的高斯泼溅成果[需高斯插件和机器学习插件] |
-| `generate_gs_splat_sog_tiles` | bool | false | 生成 SOG Tiles 格式，适用于大规模渲染的高斯泼溅成果[需高斯插件和机器学习插件] |
+| `generate_gs_ply` | bool | false | 生成 PLY 格式高斯泼溅成果[Windows系统需高斯插件和机器学习插件] |
+| `generate_gs_sog` | bool | false | 生成 SOG 格式，压缩后的高斯泼溅成果[Windows系统需高斯插件和机器学习插件] |
+| `generate_gs_splat_sog_tiles` | bool | false | 生成 SOG Tiles 格式，适用于大规模渲染的高斯泼溅成果[Windows系统需高斯插件和机器学习插件] |
 | `generate_geotiff` | bool | false | 生成正射影像 |
 | `generate_tile_2D` | bool | false | 生成 2D 瓦片 |
 | `generate_2D_from_3D_model` | bool | false | 从 3D 模型生成正射 |
@@ -112,7 +113,17 @@ Windwos系统生成高斯泼溅成果需要下载高斯插件，下载地址：[
 | `group`              | string       | 否       | 相机组名称（多相机系统时使用） 
 | `mask_path`              | string       | 否       | 二值掩膜图的路径，PNG格式，值为0的像素区域将在重建处理中被忽略 
 
-- **`group` 参数**
+#### video_meta_data
+| 字段名                | 类型         | 是否必需 | 说明                                                         |
+|----------------------|--------------|----------|--------------------------------------------------------------|
+| `id`                 | int          | 是       | 视频唯一ID                                                   |
+| `path`               | string       | 是       | 视频绝对路径                                                 |
+| `interval`               | double       | 否       | 抽帧间隔，单位秒，默认1.0                                                 |
+| `start`               | double       | 否       | 抽帧起始时间，单位秒，默认0                                                 |
+| `end`               | double       | 否       | 抽帧结束时间，单位秒，默认为视频结束时刻                                                 |
+
+
+#### **`group` 参数**
 
 用于多相机系统，将不同相机的图像分组处理：
 
@@ -191,6 +202,7 @@ Windwos系统生成高斯泼溅成果需要下载高斯插件，下载地址：[
 #### 最简任务配置
 
 ```json
+图像重建任务
 {
   "working_dir": "C:/Projects/QuickStart",
   "gdal_folder": "C:/MipMap/SDK/data",
@@ -211,6 +223,24 @@ Windwos系统生成高斯泼溅成果需要下载高斯插件，下载地址：[
   "generate_osgb": true,
   "generate_3d_tiles": true,
   "generate_geotiff": true
+}
+视频重建任务
+{
+  "working_dir": "C:/Projects/QuickStart",
+  "gdal_folder": "C:/MipMap/SDK/data",
+  "input_image_type": 1,
+  "resolution_level": 1,
+  "coordinate_system": {
+    "type": 1,
+    "type_name": "Local"
+  },
+  "video_meta_data": [
+    {"id": 1, "path": "C:/Videos/1.insv"},
+    {"id": 2, "path": "C:/Videos/2.insv"}
+  ],
+  "generate_osgb": true,
+  "generate_obj": true,
+  "generate_gs_ply": true
 }
 ```
 
