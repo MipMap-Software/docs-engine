@@ -72,7 +72,7 @@ The following example includes one local coordinate system and one WGS 84 geogra
 | `height` | int | Yes | Sensor height (pixels) |
 | `parameters` | array | Yes | Intrinsic parameter array (perspective order: fx, fy, cx, cy, k1, k2, p1, p2, k3; fisheye order: fx, fy, cx, cy, k1, k2, k3, k4) |
 | `constant_parameters` | array | No | Index array of intrinsics to hold fixed during bundle adjustment, in `parameters` order (0-based). For example, `[0,1,2,3,4,5,6,7,8]` for a perspective camera fixes all parameters. |
-| `mask_path` | string | No | Path to a binary mask image (PNG). Pixels with value `0` are ignored during reconstruction (applied to all images from this camera). |
+| `mask_path` | string | No | Path to a binary mask image in PNG format. Pixels with value `0` are ignored during reconstruction (the mask is applied to all images captured by this camera). |
 
 :::tip
 A typical use case for camera masks: when a fixed camera on a robot captures parts of the robot body, use a mask to exclude those pixels from reconstruction.
@@ -139,7 +139,8 @@ Fisheye lens
 | `path` | string | Yes | Absolute image path |
 | `meta_data` | object | Yes | Image metadata. See table below. |
 | `crs_id` | int | No | Coordinate system ID for the image. Default: `0`. |
-| `source_id` | int | Yes | Acquisition source ID. Default: `0`. |
+| `source_id` | int | No | Acquisition source ID. Default: `0`. |
+| `mask_path` | string | No | Path to a binary mask image in PNG format. Pixels with value `0` are ignored during reconstruction. |
 
 :::tip
 Use `crs_id` to distinguish image groups whose POS uses different coordinate systems—for example, WGS 84 or CGCS2000 for aerial data and a local CRS for ground data.
@@ -149,6 +150,8 @@ Use `source_id` to distinguish images from different acquisition sources—for e
 Data sources in different coordinate systems must use different source IDs.
 
 Typical use case: air–ground fusion.
+
+Binary masks mark invalid regions. The SDK ignores them during reconstruction to improve efficiency and produce cleaner outputs.
 :::
 
 **meta_data sub-fields:**
@@ -163,9 +166,7 @@ Typical use case: air–ground fusion.
 | `pos_sigma` | array[3] | Yes | POS accuracy. Centimeter-level RTK: `[0.03, 0.03, 0.06]`; decimeter-to-meter GNSS: `[0.5, 0.5, 1]`; meter-level and above: `[2.0, 2.0, 5.0]`. LiDAR data is recommended to use centimeter-level values. |
 | `orientation` | array[9] | No | 3×3 rotation matrix (9 values, row-major, unit vectors; world-to-camera). Strongly recommended for fisheye images. |
 | `position_constant` | bool | No | Fix position (`true`/`false`). When fixed, bundle adjustment will not optimize image position. |
-| `mask_path` | string | No | Path to a binary mask image (PNG). Pixels with value `0` are ignored during reconstruction. |
-
-**Note:** Binary masks mark invalid regions. The SDK ignores them during reconstruction to improve efficiency and produce cleaner outputs.
+|
 
 #### lidar_data
 
