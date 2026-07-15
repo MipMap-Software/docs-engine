@@ -103,5 +103,8 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   outDir: "../build",
-  locales
+  locales,
+  sitemap: {
+    hostname: 'https://docs.mipmap3d.com/engine/'
+  }
 });
