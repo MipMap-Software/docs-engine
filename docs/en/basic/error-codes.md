@@ -7,7 +7,19 @@ sidebar_position: 4
 
 MipMapEngine SDK uses a standardized error code system to help developers quickly locate and resolve issues. Error codes are grouped into reconstruction API errors, license errors, file I/O errors, GPU errors, and more.
 
-### Reconstruction API Error Codes
+### How to Get Error Codes
+
+#### Log file
+The SDK processing log is stored in "`working_dir`/logs/log.txt". You can get the error code from the last line in this format:
+
+[`Time`][Code]`error_code`
+
+#### Console log
+You can also get the error code from the last line of the console output in this format:
+
+[Code]`error_code`
+
+### Error Code Definitions
 
 #### Core Logic
 
@@ -21,6 +33,12 @@ MipMapEngine SDK uses a standardized error code system to help developers quickl
 | 1004 | Empty point cloud result |
 | 1005 | Empty mesh result |
 | 1006 | Insufficient orthophoto images; cannot generate 2D deliverables |
+| 1007 | Tiling error |
+| 1008 | Invalid parameter |
+| 1009 | Empty reconstruction tile |
+| 1010 | Insufficient number of control points |
+| 1011 | AT alignment failed |
+| 1012 | Empty Gaussian result |
 
 #### License
 
@@ -43,6 +61,8 @@ MipMapEngine SDK uses a standardized error code system to help developers quickl
 | 3002 | Image read error |
 | 3003 | File creation error |
 | 3004 | Machine learning model load error |
+| 3005 | Gaussian plugin missing |
+| 3006 | Machine learning model plugin missing |
 
 #### GPU / Driver
 
