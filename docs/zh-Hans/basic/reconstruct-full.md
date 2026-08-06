@@ -77,7 +77,7 @@ reconstruct_full_engine(.exe) --reconstruct_type 0 --task_json /path/to/task.jso
 | `generate_2D_from_3D_model` | bool | false | 从 3D 模型生成正射 |
 
 :::tip **重要提示**
-Windwos系统生成高斯泼溅成果需要下载高斯插件，下载地址：[高斯插件](https://asset.mipmap3d.com/plugins/gs_dlls_v2.7.1.0.zip)，以及机器学习插件，下载地址：[机器学习插件](https://asset.mipmap3d.com/plugins/ml_dlls_v10.8.0.43.zip)，下载后解压并将所有 dll 格式文件存放在 reconstruct_full_engine 同级目录。
+Windows系统生成高斯泼溅成果需要下载高斯插件，下载地址：[高斯插件](https://asset.mipmap3d.com/plugins/gs_dlls_v2.7.1.0.zip)，以及机器学习插件，下载地址：[机器学习插件](https://asset.mipmap3d.com/plugins/ml_dlls_v10.8.0.43.zip)，下载后解压并将所有 dll 格式文件存放在 reconstruct_full_engine 同级目录。
 :::
 
 ### 成果坐标系参数【可选】
