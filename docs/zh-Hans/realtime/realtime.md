@@ -312,14 +312,14 @@ realtime_service是一个gRPC实时重建服务端程序，客户端可以通过
 |----------------------|--------------|----------|--------------------------------------------------------------|
 | `license_id`                 | int          | 是       |  许可ID,必须设置为9200                                                  |
 | `working_dir`                 | string          | 是       |  工作目录，保存中间文件及最终成果文件                                                  |
-| `gdal_folder`               | string       | 是       | gdal目录路径，容器中/mipmap_engine/data目录                                                 |
+| `gdal_folder`               | string       | 是       | gdal目录路径，**Linux Docker部署不需要此字段**                                                 |
 | `do_realtime_2d_map`          | bool       | 否       | 默认false，是否计算实时二维地图，即二维正射地图，和`do_realtime_3d_map`必须至少设置其中一个为true                                         |
-| `do_realtime_3d_map`          | bool       | 否       | 默认false，是否计算实时三维地图，即三维网格（暂windows可用），和`do_realtime_2d_map`必须至少设置其中一个为true                                          |
+| `do_realtime_3d_map`          | bool       | 否       | 默认false，是否计算实时三维地图，即三维网格，和`do_realtime_2d_map`必须至少设置其中一个为true                                          |
 | `target_max_size`          | int       | 否       | 	默认0, 图像帧缩放后的最长边像素数，实时任务推荐将图像帧缩放，该值控制缩放后的图像大小，越大实时重建效果越好，单帧耗时越长。**为0时，调用者需在AddFrame前自行缩放图像并传入缩放后的图像metadata字符串（详情见下文）**，建议值：2048/1920/1280 |
 | `tile_2d_save_type`          | int       | 否       | 默认0, 实时二维成果格式，0：webp  1：png                                         |
 | `mesh_3d_save_type`          | int       | 否       | 默认0, 实时三维成果格式，0：ply  1：3dtiles                                         |
 | `rt_mesh_reso_scale_to_gsd`          | int       | 否       | 默认6，实时三维生成的网格分辨率 = rt\_mesh\_reso\_scale\_to\_gsd\*图像gsd，  该值越小，网格分辨率越高，颜色越清晰，但效率也会相应降低                                        |
-| `save_dom_tiff`          | bool       | 否       | 默认false，实时帧是否生成tif格式的DOM大图，生成大图会增加每帧耗时，大图固定存放在`working_dir/2D/geotiffs/dom.tif`                                        |
+| `save_dom_tiff`          | bool       | 否       | 默认false，实时帧是否生成tif格式的DOM大图，**生成大图会增加每帧耗时**，大图固定存放在`working_dir/2D/geotiffs/dom.tif`                                        |
 | `coordinate_descriptor_2D`          | object       | 否       | 默认null，tif格式DOM大图的坐标系，格式参考[坐标系](../basic/reconstruct-full#coordinate-system)  
 
 #### AddFrame

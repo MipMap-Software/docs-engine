@@ -312,8 +312,8 @@ Response format (InitResponse)
 |----------------------|--------------|----------|--------------------------------------------------------------|
 | `license_id`                 | int          | Yes       |  License ID; must be **9200**                                                  |
 | `working_dir`                 | string          | Yes       |  Working directory for intermediate and final output files                                                  |
-| `gdal_folder`               | string       | Yes       | GDAL directory path; in containers use `/mipmap_engine/data`                                                 |
-| `do_realtime_2d_map`          | bool       | No       | Default `false`. Whether to compute a real-time 2D map (orthophoto). At least one of `do_realtime_2d_map` and `do_realtime_3d_map` must be `true`.                                         |
+| `gdal_folder`               | string       | Yes       | GDAL directory path. **This field is not required for Linux Docker deployment.**                                                 |
+| `do_realtime_2d_map`          | bool       | No       | Default `false`. Whether to compute a real-time 2D map (orthophoto). At least one of `do_realtime_2d_map` and `do_realtime_3d_map` must be set to `true`.                                         |
 | `do_realtime_3d_map`          | bool       | No       | Default `false`. Whether to compute a real-time 3D map (mesh; Windows only for now). At least one of `do_realtime_2d_map` and `do_realtime_3d_map` must be `true`.                                          |
 | `target_max_size`          | int       | No       | 	Default `0`. Longest-edge pixel count after frame downscaling. Real-time tasks should downscale frames; larger values improve quality but increase per-frame time. **When `0`, the caller must downscale before `AddFrame` and pass metadata for the scaled image (see below).** Suggested values: 2048 / 1920 / 1280 |
 | `tile_2d_save_type`          | int       | No       | Default `0`. Real-time 2D output format: `0` = webp, `1` = png                                         |
