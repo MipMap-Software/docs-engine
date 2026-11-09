@@ -71,13 +71,14 @@ reconstruct_full_engine(.exe) --reconstruct_type 0 --task_json /path/to/task.jso
 | `generate_pc_pnts` | bool | false | 生成点云 PNTS (3D Tiles) |
 | `generate_gs_ply` | bool | false | 生成 PLY 格式高斯泼溅成果[Windows系统需高斯插件和机器学习插件] |
 | `generate_gs_sog` | bool | false | 生成 SOG 格式，压缩后的高斯泼溅成果[Windows系统需高斯插件和机器学习插件] |
-| `generate_gs_splat_sog_tiles` | bool | false | 生成 SOG Tiles 格式，适用于大规模渲染的高斯泼溅成果[Windows系统需高斯插件和机器学习插件] |
+| `generate_gs_splat_sog_tiles` | bool | false | 生成 Playcanvas SOG Tiles 格式，适用于大规模渲染的高斯泼溅成果[Windows系统需高斯插件] |
+| `generate_gs_splat_tiles` | bool | false | 生成 Cesium 3DTiles 格式，适用于大规模渲染的高斯泼溅成果[Windows系统需高斯插件] |
 | `generate_geotiff` | bool | false | 生成正射影像 |
 | `generate_tile_2D` | bool | false | 生成 2D 瓦片 |
 | `generate_2D_from_3D_model` | bool | false | 从 3D 模型生成正射 |
 
 :::tip **重要提示**
-Windows系统生成高斯泼溅成果需要下载高斯插件，下载地址：[高斯插件](https://asset.mipmap3d.com/plugins/gs_dlls_v2.7.1.0.zip)，以及机器学习插件，下载地址：[机器学习插件](https://asset.mipmap3d.com/plugins/ml_dlls_v10.8.0.43.zip)，下载后解压并将所有 dll 格式文件存放在 reconstruct_full_engine 同级目录。
+Windows系统生成高斯泼溅成果需要下载高斯插件，下载地址：[高斯插件](https://asset.mipmap3d.com/plugins/gs_dlls_v2.7.1.0.zip)，下载后解压并将所有 dll 格式文件存放在 reconstruct_full_engine 同级目录。
 :::
 
 ### 成果坐标系参数【可选】
@@ -86,6 +87,7 @@ Windows系统生成高斯泼溅成果需要下载高斯插件，下载地址：[
 |--------|------|------|
 | `coordinate_system_3d` | [coordinate_system](#coordinate_system) | 输出 3D 成果坐标系，如果不设置，则输出Local或LocalENU坐标系 |
 | `coordinate_system_2d` | [coordinate_system](#coordinate_system) | 输出 2D 成果坐标系，如果不设置，则输出Local或LocalENU坐标系 |
+| `coordinate_system_gs` | [coordinate_system](#coordinate_system) | 输出 3DGS 成果坐标系，如果不设置，则输出Local或LocalENU坐标系 |
 
 ### 高级参数
 

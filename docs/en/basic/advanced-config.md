@@ -24,6 +24,7 @@ You can set advanced parameters in the SDK JSON configuration file for more flex
 | `mesh_decimate_ratio` | double | 1.0 | Mesh simplification ratio; smaller values mean more simplification |
 | `tex_image_type_3dtiles` | int | 0 | 3D Tiles texture format: `0`=JPEG, `1`=WebP |
 | `gs_splat_max_pnt_count` | int | 0 | Maximum Gaussian point count; `0` means no limit |
+| `gs_train_max_image_edge` | int | 0 | Maximum image edge length used for Gaussian training; default is 4096 |
 | `merge_mesh_products` | bool | false | Merge tiled mesh outputs into a single result |
 | `merge_pc_products` | bool | false | Merge tiled point cloud outputs into a single result |
 | `roi_for_2d` | [roi](#roi) | - | Region of interest for 2D reconstruction. See [ROI structure](#roi) |

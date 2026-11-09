@@ -73,11 +73,15 @@ Output parameters select which reconstruction deliverables to generate. **At lea
 | `generate_pc_pnts` | bool | false | Generate point cloud PNTS (3D Tiles) |
 | `generate_gs_ply` | bool | false | Generate PLY Gaussian splatting output|
 | `generate_gs_sog` | bool | false | Generate compressed SOG Gaussian splatting output|
-| `generate_gs_splat_sog_tiles` | bool | false | Generate SOG Tiles for large-scale Gaussian splatting rendering|
+| `generate_gs_splat_sog_tiles` | bool | false | Generate PlayCanvas SOG Tiles for large-scale Gaussian splatting rendering |
+| `generate_gs_splat_tiles` | bool | false | Generate Cesium 3D Tiles for large-scale Gaussian splatting rendering |
 | `generate_geotiff` | bool | false | Generate orthophoto |
 | `generate_tile_2D` | bool | false | Generate 2D tiles |
 | `generate_2D_from_3D_model` | bool | false | Generate orthophoto from 3D model |
 
+:::tip **Important**
+On Windows, generating Gaussian splatting outputs requires the Gaussian plugin: [Gaussian plugin](https://asset.mipmap3d.com/plugins/gs_dlls_v2.7.1.0.zip). Extract it and place all `.dll` files in the same directory as `reconstruct_full_engine`.
+:::
 
 ### Output Coordinate Systems Parameters [Optional]
 
@@ -85,6 +89,7 @@ Output parameters select which reconstruction deliverables to generate. **At lea
 |--------|------|------|
 | `coordinate_system_3d` | [coordinate_system](#coordinate-system) | Output 3D coordinate system; if unset, Local or LocalENU is used |
 | `coordinate_system_2d` | [coordinate_system](#coordinate-system) | Output 2D coordinate system; if unset, Local or LocalENU is used |
+| `coordinate_system_gs` | [coordinate_system](#coordinate-system) | Output 3DGS coordinate system; if unset, Local or LocalENU is used |
 
 ### Advanced Parameters
 

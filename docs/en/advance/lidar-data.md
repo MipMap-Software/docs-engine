@@ -167,9 +167,17 @@ Binary masks mark invalid regions. The SDK ignores them during reconstruction to
 | `timestamp` | double | Yes | Image acquisition timestamp. **Required for handheld LiDAR imagery; must match timestamps recorded in the LAS point cloud `gps_time` field.** Optional for other sources. |
 | `pos` | array[3] | Yes | POS position [longitude/X, latitude/Y, elevation/Z]. **Required for handheld LiDAR imagery; must use the same CRS as the corresponding LAS point cloud.** |
 | `pos_sigma` | array[3] | Yes | POS accuracy. Centimeter-level RTK: `[0.03, 0.03, 0.06]`; decimeter-to-meter GNSS: `[0.5, 0.5, 1]`; meter-level and above: `[2.0, 2.0, 5.0]`. LiDAR data is recommended to use centimeter-level values. |
-| `orientation` | array[9] | No | 3×3 rotation matrix (9 values, row-major, unit vectors; world-to-camera). Strongly recommended for fisheye images. |
+| `orientation` | array[9] | No | 3×3 rotation matrix (9 values, row-major, unit vectors; **world-to-camera** rotation matrix). Strongly recommended for fisheye images. |
 | `position_constant` | bool | No | Fix position (`true`/`false`). When fixed, bundle adjustment will not optimize image position. |
 |
+
+:::tip
+`pos` is the camera optical center \(C\), and `orientation` is the world-to-camera rotation matrix \(R\):
+
+\[
+X_c = R(X_w - C)
+\]
+:::
 
 #### lidar_data
 

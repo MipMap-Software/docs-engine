@@ -24,6 +24,7 @@ sidebar_position: 3
 | `mesh_decimate_ratio` | double | 1.0 | 三维模型网格的简化率，值越小简化力度越大 |
 | `tex_image_type_3dtiles` | int | 0 | 3D Tiles 纹理格式：0=JPEG，1=WebP |
 | `gs_splat_max_pnt_count` | int | 0 | 最大高斯点数，默认0代表不限制 |
+| `gs_train_max_image_edge` | int | 0 | 参与高斯训练的最大图像边长，默认4096 |
 | `merge_mesh_products` | bool | false | 是否将分块重建的网格成果合并为一个整体 |
 | `merge_pc_products` | bool | false | 是否将分块重建的点云成果合并为一个整体 |
 | `roi_for_2d` | [roi](#roi) | - | 二维重建的感兴趣区域，格式查看[ROI结构释义](#roi)  |
